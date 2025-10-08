@@ -6,27 +6,31 @@ import {
   SORTED_APP,
 } from "../../reducer/reducer";
 import { useAppContext } from "../../contexts/context";
+import { useCallback } from "react";
 
 export const useGetLocal = () => {
   const { dispatch, savedLocal } = useAppContext();
-  const handelUnstall = (id) => {
-    const getLocal = localStorage.getItem("installedApps");
+  const handelUnstall = useCallback(
+    (id) => {
+      const getLocal = localStorage.getItem("installedApps");
 
-    if (getLocal) {
-      const savedApp = JSON.parse(getLocal);
-      const newApps = savedApp.filter((app) => app.id !== id);
-      localStorage.setItem("installedApps", JSON.stringify(newApps));
-      dispatch({ type: SET_LOCAL, payload: newApps });
-      toast.success("Unistall Successfully");
-    }
-  };
+      if (getLocal) {
+        const savedApp = JSON.parse(getLocal);
+        const newApps = savedApp.filter((app) => app.id !== id);
+        localStorage.setItem("installedApps", JSON.stringify(newApps));
+        dispatch({ type: SET_LOCAL, payload: newApps });
+        toast.success("Unistall Successfully");
+      }
+    },
+    [dispatch]
+  );
 
   const handelSort = (e) => {
     const value = e.target.value;
     dispatch({ type: IS_SELECTED, payload: value });
     if (value === "def") {
       dispatch({ type: SORTED_APP, payload: savedLocal });
-      return
+      return;
     }
     if (value === "download_asc") {
       const sortByASC = [...savedLocal].sort(
