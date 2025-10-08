@@ -1,5 +1,42 @@
-import React, { memo } from 'react';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React, { memo } from "react";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+
+const footerData = {
+  brand: {
+    name: "HERO.IO",
+    description:
+      "Your one-stop marketplace for the latest and greatest mobile applications.",
+  },
+  linkColumns: [
+    {
+      title: "Quick Links",
+      links: [
+        { text: "Home", href: "#" },
+        { text: "Categories", href: "#" },
+        { text: "Trending", href: "#" },
+        { text: "About Us", href: "#" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { text: "FAQ", href: "#" },
+        { text: "Contact Us", href: "#" },
+        { text: "Privacy Policy", href: "#" },
+        { text: "Terms of Service", href: "#" },
+      ],
+    },
+  ],
+  socials: {
+    title: "Follow Us",
+    links: [
+      { name: "Facebook", href: "https://www.facebook.com/ArafatNill69", Icon: Facebook },
+      { name: "Twitter", href: "#", Icon: Twitter },
+      { name: "Instagram", href: "#", Icon: Instagram },
+      { name: "Linkedin", href: "#", Icon: Linkedin },
+    ],
+  },
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,48 +45,57 @@ const Footer = () => {
     <footer className="bg-slate-800 text-slate-300 pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-
           <div className="md:col-span-1">
-            <h3 className="text-xl font-bold text-white mb-4">HERO.IO</h3>
-            <p className="text-sm">
-              Your one-stop marketplace for the latest and greatest mobile applications.
-            </p>
+            <h3 className="text-xl font-bold text-white mb-4">
+              {footerData.brand.name}
+            </h3>
+            <p className="text-sm">{footerData.brand.description}</p>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Categories</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Trending</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-            </ul>
-          </div>
+          {footerData.linkColumns.map((column) => (
+            <div key={column.title}>
+              <h4 className="font-semibold text-white mb-4">{column.title}</h4>
+              <ul className="space-y-2 text-sm">
+                {column.links.map((link) => (
+                  <li key={link.text}>
+                    <a
+                      href={link.href}
+                      className="hover:text-white transition-colors"
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Support</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-white mb-4">Follow Us</h4>
+            <h4 className="font-semibold text-white mb-4">
+              {footerData.socials.title}
+            </h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Linkedin size={20} /></a>
+              {footerData.socials.links.map((social) => {
+                const { Icon } = social;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="hover:text-white transition-colors"
+                    aria-label={social.name}
+                  >
+                    <Icon size={20} />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
-          <p>&copy; {currentYear} HERO.IO. All Rights Reserved.</p>
-        </div>
+      </div>
+      <div className="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
+        <p>
+          &copy; {currentYear} {footerData.brand.name}. All Rights Reserved.
+        </p>
       </div>
     </footer>
   );

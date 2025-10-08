@@ -1,16 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "../pages/Home";
-import Root from "../layouts/Root";
-import Apps from "../pages/Apps";
-import Installation from "../pages/Installation";
-import AppDetails from "../pages/AppDetails";
-import NotFound from "../pages/NotFound";
+import SetLoading from "../components/SetLoading";
+const Home = lazy(() => import("../pages/Home"));
+const Root = lazy(() => import("../layouts/Root"));
+const Apps = lazy(() => import("../pages/Apps"));
+const Installation = lazy(() => import("../pages/Installation"));
+const AppDetails = lazy(() => import("../pages/AppDetails"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    hydrateFallbackElement: SetLoading,
     children: [
       {
         index: true,
@@ -25,15 +27,15 @@ const router = createBrowserRouter([
         Component: Installation,
       },
       {
-        path: '/product-details/:id',
-        Component: AppDetails
-      }
+        path: "/product-details/:id",
+        Component: AppDetails,
+      },
     ],
   },
   {
-    path: '*',
-    Component: NotFound
-  }
+    path: "*",
+    Component: NotFound,
+  },
 ]);
 
 const AppRouter = () => {

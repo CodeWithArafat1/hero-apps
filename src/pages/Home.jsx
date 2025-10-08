@@ -10,7 +10,7 @@ const Home = () => {
   const { loading } = useAppContext();
   return (
     <>
-      <div className="bg-gray-50 pt-20 sm:pt-24 px-4">
+      <div className="bg-gray-50 pt-30 spx-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-800">
             We Build <br />

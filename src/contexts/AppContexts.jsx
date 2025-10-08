@@ -1,5 +1,5 @@
-import React, { memo, useEffect, useReducer } from "react";
-import { DISPLAY_DATA, reducer, SET_LOADING } from "../reducer/reducer";
+import React, {  useEffect, useMemo, useReducer } from "react";
+import { DISPLAY_DATA, reducer } from "../reducer/reducer";
 import { AppContext } from "./context";
 import { ToastContainer } from "react-toastify";
 
@@ -28,12 +28,20 @@ const AppContexts = ({ children }) => {
     };
     fetchDataJosn();
   }, [dispatch]);
+
+  const contextValue = useMemo(
+    () => ({
+      ...state,
+      dispatch,
+    }),
+    [state]
+  );
   return (
-    <AppContext.Provider value={{ ...state, dispatch }}>
+    <AppContext.Provider value={contextValue}>
       {children}
       <ToastContainer />
     </AppContext.Provider>
   );
 };
 
-export default memo(AppContexts);
+export default AppContexts;

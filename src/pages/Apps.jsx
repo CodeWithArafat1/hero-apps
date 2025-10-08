@@ -55,7 +55,7 @@ const Apps = () => {
           {loading ? (
             <SetLoading />
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 min-h-[calc(100vh-381px)]">
               {displayData.map((app) => {
                 return <AppsCard key={app.id} app={app} />;
               })}
