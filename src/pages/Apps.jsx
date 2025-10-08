@@ -14,6 +14,7 @@ const Apps = () => {
       const searchedData = data.filter((app) =>
         app.title.toLowerCase().includes(qry)
       );
+
       dispatch({ type: SEARCH_APP, payload: searchedData });
     });
   };
@@ -54,11 +55,17 @@ const Apps = () => {
 
           {loading ? (
             <SetLoading />
-          ) : (
+          ) : displayData.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 min-h-[calc(100vh-381px)]">
               {displayData.map((app) => {
                 return <AppsCard key={app.id} app={app} />;
               })}
+            </div>
+          ) : (
+            <div className="text-center py-20 min-h-[calc(100vh-381px)] flex flex-col justify-center items-center">
+              <h2 className="text-2xl font-semibold text-gray-500">
+                App Not Found
+              </h2>
             </div>
           )}
         </div>
