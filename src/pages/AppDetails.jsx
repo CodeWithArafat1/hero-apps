@@ -48,35 +48,39 @@ const AppDetails = () => {
   return (
     <>
       <div className="bg-slate-100 p-8 overflow-x-hidden">
-        <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-sm">
-          <div className="flex flex-col sm:flex-row items-center gap-8">
+        <div className="max-w-4xl mx-auto bg-white p-4 sm:p-8 rounded-lg shadow-sm">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
             <div className="flex-shrink-0 bg-white p-4 rounded-xl shadow-md border border-gray-100">
-              <img src={newObj.image} alt="" className="w-24" />
+              <img
+                src={newObj.image}
+                alt={newObj.title}
+                className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
+              />
             </div>
 
-            <div className="flex-grow text-center sm:text-left">
-              <h1 className="text-3xl font-bold text-gray-800">
+            <div className="flex-grow w-full text-center sm:text-left">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
                 {newObj.title}
               </h1>
-              <div className="mt-1 text-sm flex gap-2 text-gray-500">
+              <div className="mt-1 text-sm flex gap-2 text-gray-500 justify-center sm:justify-start">
                 <h1>Developed by</h1>
                 <a href="#" className="text-blue-500 font-medium mr-2">
                   {newObj.companyName}
                 </a>
               </div>
 
-              <div className="mt-6 flex justify-center sm:justify-start items-center gap-8 sm:gap-10">
-                <div className="flex items-center gap-3">
+              <div className="mt-6 flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10 border">
+                <div className="flex items-center gap-3 text-center sm:text-left ">
                   <Download className="text-green-500" size={28} />
                   <div>
                     <p className="text-xs text-gray-500">Downloads</p>
-                    <p className="text-2xl font-bold text-gray-800">
+                    <p className="text-xl sm:text-2xl font-bold text-gray-800">
                       {formatNumber(newObj.downloads)}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 text-center sm:text-left">
                   <Star
                     className="text-orange-400"
                     size={28}
@@ -84,24 +88,27 @@ const AppDetails = () => {
                   />
                   <div>
                     <p className="text-xs text-gray-500">Average Ratings</p>
-                    <p className="text-2xl font-bold text-gray-800">
-                      {newObj.ratings.length.toFixed(2)}
+                    <p className="text-xl sm:text-2xl font-bold text-gray-800">
+                      {newObj.ratingAvg}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                {/* Stat 3: Total Reviews */}
+                <div className="flex items-center gap-3 text-center sm:text-left">
                   <MessageSquareText className="text-purple-500" size={28} />
                   <div>
                     <p className="text-xs text-gray-500">Total Reviews</p>
-                    <p className="text-2xl font-bold text-gray-800">
+                    <p className="text-xl sm:text-2xl font-bold text-gray-800">
                       {formatNumber(newObj.reviews)}
                     </p>
                   </div>
                 </div>
               </div>
 
+              {/* Install Button */}
               <div className="mt-8">
+                {/* এই বাটনটি w-full sm:w-auto ব্যবহারের কারণে আগে থেকেই responsive ছিল */}
                 <button
                   disabled={isExisting}
                   onClick={() => handelInstall(newObj)}
@@ -111,7 +118,7 @@ const AppDetails = () => {
                     ? "Installed"
                     : `Install ${
                         newObj.size > 1024
-                          ? `${newObj.size} GB`
+                          ? `${(newObj.size / 1024).toFixed(1)} GB`
                           : `${newObj.size} MB`
                       }`}
                 </button>
