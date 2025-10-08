@@ -6,7 +6,7 @@ This is a modern and performance-focused web application that showcases various 
 
 ## ✨ Features
 
-- **Dynamic Routing:** Dynamic detail pages for each app using `react-router-dom`.
+- **Dynamic Routing:** Dynamic detail pages for each app using `react-router`.
 - **Global State Management:** Centralized application state management using `Context API` and the `useReducer` Hook.
 - **Data Visualization:** Beautiful bar charts for app ratings powered by `Recharts`.
 - **Performance Optimized:**
