@@ -69,7 +69,7 @@ const AppDetails = () => {
                 </a>
               </div>
 
-              <div className="mt-6 flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10 border">
+              <div className="mt-6 flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10 ">
                 <div className="flex items-center gap-3 text-center sm:text-left ">
                   <Download className="text-green-500" size={28} />
                   <div>
