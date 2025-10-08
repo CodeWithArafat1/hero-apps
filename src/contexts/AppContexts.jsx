@@ -1,4 +1,4 @@
-import React, {  useEffect, useMemo, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { DISPLAY_DATA, reducer } from "../reducer/reducer";
 import { AppContext } from "./context";
 import { ToastContainer } from "react-toastify";
@@ -29,15 +29,8 @@ const AppContexts = ({ children }) => {
     fetchDataJosn();
   }, [dispatch]);
 
-  const contextValue = useMemo(
-    () => ({
-      ...state,
-      dispatch,
-    }),
-    [state]
-  );
   return (
-    <AppContext.Provider value={contextValue}>
+    <AppContext.Provider value={{ ...state, dispatch }}>
       {children}
       <ToastContainer />
     </AppContext.Provider>

@@ -11,7 +11,7 @@ export const IS_SELECTED = 'IS_SELECTED'
 export const reducer = (state, action) => {
   const { type, payload } = action;
   if (type === SET_LOADING) {
-    return { ...state, loading: true };
+    return { ...state, loading: payload };
   }
   if (type === DISPLAY_DATA) {
     return { ...state, data: payload, displayData: payload, loading: false };
