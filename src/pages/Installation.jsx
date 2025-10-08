@@ -17,7 +17,7 @@ const Installation = () => {
   }, [dispatch]);
 
   return (
-    <div className="bg-slate-800 py-16 sm:py-20 px-4 font-sans">
+    <div className="bg-slate-800 py-30  px-4 font-sans">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-white">

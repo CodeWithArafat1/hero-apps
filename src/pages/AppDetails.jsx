@@ -47,8 +47,8 @@ const AppDetails = () => {
 
   return (
     <>
-      <div className="bg-slate-100 p-8 overflow-x-hidden ">
-        <div className="max-w-4xl mx-auto bg-white p-4 sm:p-8 rounded-lg shadow-sm pt-10">
+      <div className="bg-slate-100 py-20 overflow-x-hidden ">
+        <div className="max-w-4xl mx-auto bg-white p-4 sm:p-8 rounded-lg shadow-sm ">
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
             <div className="flex-shrink-0 bg-white p-4 rounded-xl shadow-md border border-gray-100">
               <img
