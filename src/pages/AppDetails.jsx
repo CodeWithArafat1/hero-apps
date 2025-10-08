@@ -94,7 +94,6 @@ const AppDetails = () => {
                   </div>
                 </div>
 
-                {/* Stat 3: Total Reviews */}
                 <div className="flex items-center gap-3 text-center sm:text-left">
                   <MessageSquareText className="text-purple-500" size={28} />
                   <div>
@@ -106,9 +105,7 @@ const AppDetails = () => {
                 </div>
               </div>
 
-              {/* Install Button */}
               <div className="mt-8">
-                {/* এই বাটনটি w-full sm:w-auto ব্যবহারের কারণে আগে থেকেই responsive ছিল */}
                 <button
                   disabled={isExisting}
                   onClick={() => handelInstall(newObj)}
@@ -160,7 +157,7 @@ const AppDetails = () => {
           </ResponsiveContainer>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-20 px-5">
           <h1 className="text-2xl font-bold">Description</h1>
 
           <p>{newObj.description}</p>

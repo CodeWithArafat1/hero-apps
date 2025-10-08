@@ -17,7 +17,7 @@ export const useGetLocal = () => {
       const newApps = savedApp.filter((app) => app.id !== id);
       localStorage.setItem("installedApps", JSON.stringify(newApps));
       dispatch({ type: SET_LOCAL, payload: newApps });
-      toast.success("Unstall Successfully");
+      toast.success("Unistall Successfully");
     }
   };
 
