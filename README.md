@@ -24,7 +24,7 @@ This is a modern and performance-focused web application that showcases various 
 - **Core Framework:** [React](https://react.dev/)
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Routing:** [React Router DOM](https://reactrouter.com/) (v6+)
+- **Routing:** [React Router](https://reactrouter.com/) (v7+)
 - **State Management:** React Context API with `useReducer` Hook
 - **Icons:** [Lucide React](https://lucide.dev/guide/packages/lucide-react)
 - **Data Visualization:** [Recharts](https://recharts.org/)
@@ -45,7 +45,7 @@ You must have [Node.js](https://nodejs.org/) (version 16 or later) and [npm](htt
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/CodeWithArafat1/hero-apps.git](https://github.com/CodeWithArafat1/hero-apps.git)
+    git clone https://github.com/CodeWithArafat1/hero-apps.git
     ```
 2.  **Navigate to the project directory:**
     ```sh
