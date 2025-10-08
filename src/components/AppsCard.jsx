@@ -2,6 +2,7 @@ import downloadIcon from "../assets/icon-downloads.png";
 import starIcon from "../assets/icon-ratings.png";
 import { Link } from "react-router";
 import formatNumber from "../utilities/formatNumber";
+import { memo } from "react";
 
 const AppsCard = ({ app }) => {
   return (
@@ -38,4 +39,4 @@ const AppsCard = ({ app }) => {
   );
 };
 
-export default AppsCard;
+export default memo(AppsCard);

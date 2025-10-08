@@ -3,6 +3,7 @@ import downloadIcon from "../assets/icon-downloads.png";
 import starIcon from "../assets/icon-ratings.png";
 import { Link } from "react-router";
 import formatNumber from "../utilities/formatNumber";
+import { memo } from "react";
 
 const TrendingApps = () => {
   const { displayData } = useAppContext();
@@ -66,4 +67,4 @@ const TrendingApps = () => {
   );
 };
 
-export default TrendingApps;
+export default memo(TrendingApps);

@@ -1,4 +1,4 @@
-import React, { useTransition } from "react";
+import React, { memo, useTransition } from "react";
 import { Search } from "lucide-react";
 import AppsCard from "../components/AppsCard";
 import { useAppContext } from "../contexts/context";
@@ -67,4 +67,4 @@ const Apps = () => {
   );
 };
 
-export default Apps;
+export default memo(Apps);

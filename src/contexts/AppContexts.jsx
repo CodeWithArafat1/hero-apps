@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { memo, useEffect, useReducer } from "react";
 import { DISPLAY_DATA, reducer, SET_LOADING } from "../reducer/reducer";
 import { AppContext } from "./context";
 import { ToastContainer } from "react-toastify";
@@ -10,7 +10,7 @@ const initialState = {
   loading: true,
   savedLocal: [],
   isSelected: "def",
-  isExisting: false
+  isExisting: false,
 };
 
 const AppContexts = ({ children }) => {
@@ -36,4 +36,4 @@ const AppContexts = ({ children }) => {
   );
 };
 
-export default AppContexts;
+export default memo(AppContexts);

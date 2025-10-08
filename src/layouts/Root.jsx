@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Home from "../pages/Home";
 import { Outlet } from "react-router";
 import Navbar from "../components/shared/Navbar";
@@ -11,9 +11,9 @@ const Root = () => {
       <div className="">
         <Outlet />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
 
-export default Root;
+export default memo(Root);

@@ -14,7 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { IS_EXISTING } from "../reducer/reducer";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useGetLocal } from "./hooks/useGetLocal";
 import AppNotFound from "./AppNotFound";
 
@@ -167,4 +167,4 @@ const AppDetails = () => {
   );
 };
 
-export default AppDetails;
+export default memo(AppDetails);

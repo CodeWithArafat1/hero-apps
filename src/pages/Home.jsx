@@ -4,7 +4,7 @@ import StatsSection from "../components/StatsSection";
 import TrendingApps from "../components/TrendingApps";
 import { useAppContext } from "../contexts/context";
 import SetLoading from "../components/SetLoading";
-
+import { memo } from "react";
 
 const Home = () => {
   const { loading } = useAppContext();
@@ -26,7 +26,8 @@ const Home = () => {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             {homePageContent.heroSection.buttons.map((btn) => {
               return (
-                <a target="_blank"
+                <a
+                  target="_blank"
                   key={btn.id}
                   href={btn.link}
                   className="flex w-full sm:w-auto items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-700 shadow-sm transition-shadow hover:shadow-md"
@@ -55,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
 import homePageContent from "../data/homeData";
-
 
 const StatsSection = () => {
   return (
@@ -32,4 +31,4 @@ const StatsSection = () => {
   );
 };
 
-export default StatsSection;
+export default memo(StatsSection);

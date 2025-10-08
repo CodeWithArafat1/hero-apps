@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../../assets/logo.png";
 import { Github, Menu, X } from "lucide-react";
@@ -103,4 +103,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

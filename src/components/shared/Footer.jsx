@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -55,4 +55,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

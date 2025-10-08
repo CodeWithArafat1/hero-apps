@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router";
 import NotFoundImage from "../assets/App-Error.png";
 
@@ -23,4 +23,4 @@ const AppNotFound = () => {
   );
 };
 
-export default AppNotFound;
+export default memo(AppNotFound);
