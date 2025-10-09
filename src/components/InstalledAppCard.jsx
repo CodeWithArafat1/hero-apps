@@ -16,7 +16,7 @@ const InstalledAppCard = ({ app, handelUnstall }) => {
             </span>
             <span className="flex items-center gap-1 text-orange-500">
               <Star size={14} fill="currentColor" />{" "}
-              {app.ratings.length.toFixed(2)}
+              {app.ratingAvg}
             </span>
             <span>{app.size > 1024 ? `${app.size} GB` : `${app.size} MB`}</span>
           </div>
