@@ -29,7 +29,7 @@ const AppsCard = ({ app }) => {
                 <img src={starIcon} alt="" />
               </figure>
               <span className="text-sm font-semibold">
-                {app.ratings.length.toFixed(2)}
+                {app.ratingAvg}
               </span>
             </div>
           </div>
