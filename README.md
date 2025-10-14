@@ -6,7 +6,7 @@ This is a modern and performance-focused web application that showcases various 
 
 ## ✨ Features
 
-- **Dynamic Routing:** Dynamic detail pages for each app using `react-router-dom`.
+- **Dynamic Routing:** Dynamic detail pages for each app using `react-router`.
 - **Global State Management:** Centralized application state management using `Context API` and the `useReducer` Hook.
 - **Data Visualization:** Beautiful bar charts for app ratings powered by `Recharts`.
 - **Performance Optimized:**
@@ -24,7 +24,7 @@ This is a modern and performance-focused web application that showcases various 
 - **Core Framework:** [React](https://react.dev/)
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Routing:** [React Router DOM](https://reactrouter.com/) (v6+)
+- **Routing:** [React Router DOM](https://reactrouter.com/) (v7+)
 - **State Management:** React Context API with `useReducer` Hook
 - **Icons:** [Lucide React](https://lucide.dev/guide/packages/lucide-react)
 - **Data Visualization:** [Recharts](https://recharts.org/)
